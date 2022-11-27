@@ -40,7 +40,7 @@ class MapScreenVm extends ChangeNotifier {
   getPrediction(BuildContext context) async {
     Prediction? p = await PlacesAutocomplete.show(
         context: context,
-        apiKey: 'AIzaSyDB9DfFEwNp8iFXWm-PVm6JefCfpFM_n7A',
+        apiKey: '',
         mode: Mode.overlay,
         // Mode.fullscreen
         language: "fr",
@@ -106,7 +106,8 @@ class MapScreenVm extends ChangeNotifier {
     GeoData data = await Geocoder2.getDataFromCoordinates(
         latitude: selectedMarker.position.latitude,
         longitude: selectedMarker.position.longitude,
-        googleMapApiKey: 'AIzaSyDB9DfFEwNp8iFXWm-PVm6JefCfpFM_n7A');
+        googleMap
+      Key: '');
 
     return data.city;
   }
